@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="노후장비 개인구매", layout="wide")
 
 # GitHub에 업로드한 이미지 URL (사용자명/저장소명을 실제 값으로 변경)
-GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/사용자명/저장소명/main/assets/image_1.png"
+GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/image_1.png"
 
 # Streamlit 실행
 st.markdown("<h1 style='text-align: center; font-size: 70px;'>노후장비 개인구매</h1>", unsafe_allow_html=True)
