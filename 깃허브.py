@@ -12,7 +12,7 @@ def change_page(page_number):
     st.session_state.page = page_number
     st.rerun()  # 🔹 상태 변경 후 즉시 새로고침하여 한 번의 클릭으로 동작하도록 함
 
-# ✅ CSS 적용 (버튼 디자인 복구 + 애니메이션)
+# ✅ CSS 적용 (구매 신청 버튼 디자인 적용)
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
@@ -24,16 +24,7 @@ st.markdown("""
         padding: 0;
     }
 
-    /* 버튼 컨테이너 */
-    .center-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-
-    /* 구매 신청 버튼 스타일 (디자인 복구) */
+    /* 구매 신청 버튼 (민트색, 너비 400px) */
     .custom-btn {
         background-color: #2BC2BD !important;
         color: white !important;
@@ -48,7 +39,7 @@ st.markdown("""
         display: inline-block;
         width: 400px;
     }
-    
+
     .custom-btn:hover {
         background-color: #0056B3 !important;
     }
@@ -83,9 +74,12 @@ if st.session_state.page == 1:
             </div>
         """, unsafe_allow_html=True)
 
-        # ✅ 구매 신청 버튼 (디자인 복구 & 한 번 클릭으로 동작)
-        if st.button("구매 신청", key="next"):
-            change_page(2)  # 🔹 페이지 변경 후 즉시 새로고침
+        # ✅ 구매 신청 버튼 (HTML + CSS 스타일 적용)
+        st.markdown("""
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="custom-btn" onclick="window.location.href='?page=2'">구매 신청</button>
+            </div>
+        """, unsafe_allow_html=True)
 
         # ✅ 안내 문구
         st.markdown("""
@@ -94,6 +88,10 @@ if st.session_state.page == 1:
                 <span style="font-size: 13px; font-weight: 400; color: #66666D;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
             </p>
         """, unsafe_allow_html=True)
+
+        # ✅ 구매 신청 버튼 클릭 시 페이지 이동
+        if st.button("구매 신청", key="next"):
+            change_page(2)
 
 # ✅ 두 번째 화면 (버튼 클릭 후 나타나는 화면)
 elif st.session_state.page == 2:
@@ -105,6 +103,6 @@ elif st.session_state.page == 2:
             </div>
         """, unsafe_allow_html=True)
 
-        # 뒤로 가기 버튼 (첫 번째 화면으로 복귀, 기존 디자인 유지)
+        # ✅ "이전으로" 버튼 (Streamlit 기본 버튼 스타일 유지)
         if st.button("이전으로", key="back"):
-            change_page(1)  # 🔹 페이지 변경 후 즉시 새로고침
+            change_page(1)
