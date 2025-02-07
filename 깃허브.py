@@ -1,30 +1,20 @@
 import streamlit as st
-from pathlib import Path
 
 # Streamlit 설정
 st.set_page_config(page_title="노후장비 개인구매", layout="wide")
 
-# 이미지 상대 경로 설정 (현재 실행 파일 기준)
-ASSETS_PATH = Path(__file__).parent / "assets"
-
-def relative_to_assets(path: str) -> Path:
-    return ASSETS_PATH / Path(path)
-
-# 이미지 표시
-image_path = relative_to_assets("image_1.png")
+# GitHub에 업로드한 이미지 URL (사용자명/저장소명을 실제 값으로 변경)
+GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/사용자명/저장소명/main/assets/image_1.png"
 
 # Streamlit 실행
 st.markdown("<h1 style='text-align: center; font-size: 70px;'>노후장비 개인구매</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: #66666D;'>₩10,000부터</h3>", unsafe_allow_html=True)
 
-# 이미지 표시 (파일이 존재하는 경우만)
-if image_path.exists():
-    st.image(image_path, use_column_width=True)
-else:
-    st.warning("이미지 파일을 찾을 수 없습니다. GitHub에서 직접 불러오는 방식을 사용할 수도 있습니다.")
+# GitHub에서 직접 이미지 로드
+st.image(GITHUB_IMAGE_URL, use_container_width=True)  # 변경된 부분
 
 # 버튼 생성
-if st.button("구매 신청하기", use_container_width=True):
+if st.button("구매 신청하기", use_container_width=True):  # 버튼도 화면 크기에 맞게 조정
     st.success("구매 신청이 완료되었습니다!")
 
 # 안내 문구
