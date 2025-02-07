@@ -114,7 +114,6 @@ elif st.session_state.page == 2:
 
                 <p style="font-size: 23px; font-weight: bold;">성명</p>
 
-                <!-- 입력 필드 -->
                 <input class="custom-input" type="text" placeholder="모를 경우 사번 검색하기">
             </div>
         """, unsafe_allow_html=True)
