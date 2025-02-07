@@ -109,11 +109,24 @@ elif st.session_state.page == 2:
         st.markdown("""
             <div class="left-align">
                 <img src="https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/chatbot.png" width="50">
+
                 <p style="font-size: 18px; margin-top: 10px; font-weight: 400;">
                     정보 조회에 필요한 본인 사번을 입력해주세요.
                 </p>
+
                 <p style="font-size: 23px; font-weight: bold;">성명</p>
             </div>
+        """, unsafe_allow_html=True)
+
+        # ✅ CSS 적용 (입력 필드 여백 및 크기 조정)
+        st.markdown("""
+            <style>
+            div.stTextInput > div > input {
+                width: 400px !important;
+                padding: 10px !important;
+                border-radius: 8px !important;
+            }
+            </style>
         """, unsafe_allow_html=True)
 
         # ✅ 입력 필드 (Streamlit 기본 기능 활용)
@@ -122,3 +135,4 @@ elif st.session_state.page == 2:
         # ✅ "이전으로" 버튼 (Streamlit 기본 스타일 유지)
         if st.button("이전으로", key="back", use_container_width=False):
             change_page(1)
+
