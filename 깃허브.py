@@ -7,11 +7,11 @@ st.set_page_config(page_title="노후장비 개인구매", layout="wide")
 GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/image_1.png"
 
 # Streamlit 실행
-st.markdown("<h1 style='text-align: center; font-size: 70px;'>노후장비 개인구매</h1>", unsafe_allow_html=True)
+st.markdown(
+    f"<p style='text-align: center;'><img src='{GITHUB_IMAGE_URL}' width='300'></p>",
+    unsafe_allow_html=True
+)st.markdown("<h1 style='text-align: center; font-size: 70px;'>노후장비 개인구매</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: #66666D;'>₩10,000부터</h3>", unsafe_allow_html=True)
-
-# GitHub에서 직접 이미지 로드
-st.image(GITHUB_IMAGE_URL, use_container_width=300)  # 변경된 부분
 
 # 버튼 생성
 if st.button("구매 신청하기", use_container_width=True):  # 버튼도 화면 크기에 맞게 조정
