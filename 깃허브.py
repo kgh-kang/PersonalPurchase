@@ -1,3 +1,4 @@
+import streamlit as st
 import requests
 
 # ✅ API 정보
@@ -10,27 +11,27 @@ headers = {
     "asset-user-number": USER_NUMBER
 }
 
-# ✅ 테스트할 유저 사번
-test_user_number = "23080058"  # 🔹 테스트할 사번 (임의로 입력)
+# ✅ Streamlit UI
+st.title("API 통신 테스트")
 
-# ✅ API 호출 테스트
-def test_api():
-    url = f"{BASE_URL}/user/{test_user_number}"  # 🔹 API URL 구성
-    try:
-        response = requests.get(url, headers=headers)
-        print(f"응답 코드: {response.status_code}")  # 🔹 응답 코드 출력
+# 사용자 입력 필드 (사번 입력)
+user_number = st.text_input("사번을 입력하세요:", "20020049")
 
-        if response.status_code == 200:
-            print("✅ API 통신 성공!")
-            print("응답 데이터:")
-            print(response.json())  # 🔹 JSON 응답 출력
-        else:
-            print(f"⚠️ API 요청 실패: {response.status_code}")
-            print(f"응답 본문: {response.text}")  # 🔹 에러 메시지 확인
+# 조회 버튼
+if st.button("API 조회"):
+    with st.spinner("API 요청 중..."):
+        url = f"{BASE_URL}/user/{user_number}"  # 🔹 API URL 구성
 
-    except requests.exceptions.RequestException as e:
-        print(f"❌ API 요청 중 오류 발생: {e}")
+        try:
+            response = requests.get(url, headers=headers)
+            st.write(f"응답 코드: {response.status_code}")  # 🔹 응답 코드 출력
 
-# ✅ 실행
-if __name__ == "__main__":
-    test_api()
+            if response.status_code == 200:
+                st.success("✅ API 통신 성공!")
+                st.json(response.json())  # 🔹 JSON 응답 출력
+            else:
+                st.error(f"⚠️ API 요청 실패: {response.status_code}")
+                st.write(f"응답 본문: {response.text}")  # 🔹 에러 메시지 확인
+
+        except requests.exceptions.RequestException as e:
+            st.error(f"❌ API 요청 중 오류 발생: {e}")
