@@ -45,7 +45,7 @@ GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/m
 with st.container():
     # 이미지 중앙 정렬 및 크기 조절
     st.markdown(
-        f"<p style='text-align: center;'><img src='{GITHUB_IMAGE_URL}' width='130'></p>",
+        f"<p style='text-align: center; margin-top: 300px;>?'><img src='{GITHUB_IMAGE_URL}' width='130'></p>",
         unsafe_allow_html=True
     )
 
