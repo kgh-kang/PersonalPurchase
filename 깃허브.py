@@ -44,8 +44,8 @@ with st.container():
     # :흰색_확인_표시: 제목과 서브타이틀에서 폰트를 직접 지정
     st.markdown("""
         <p style='text-align: center; font-family: "Noto Sans KR", sans-serif; line-height: 1.5;'>
-            <span style="font-size: 60px; font-weight: bold;">노후장비 개인구매</span><br>
-            <span style="font-size: 60px; color: #66666D;">네꺼에서 내꺼로 만들 마지막 기회.</span>
+            <span style="font-size: 50px; font-weight: bold;">노후장비 개인구매.</span><br>
+            <span style="font-size: 40px; color: #66666D;">네꺼에서 내꺼로.</span>
         </p>
     """, unsafe_allow_html=True)
     # :흰색_확인_표시: 구매 신청 버튼을 화면 정중앙에 배치
