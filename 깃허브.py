@@ -12,7 +12,7 @@ def change_page(page_number):
     st.session_state.page = page_number
     st.rerun()
 
-# ✅ CSS 적용 (Streamlit 버튼을 강제로 스타일 변경)
+# ✅ CSS 적용 (두 번째 화면을 위한 스타일 추가)
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
@@ -24,9 +24,25 @@ st.markdown("""
         padding: 0;
     }
 
-    /* Streamlit 기본 버튼 스타일 강제 변경 */
+    /* 두 번째 화면 좌측 정렬 요소 */
+    .left-align {
+        text-align: left;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    /* 입력 필드 스타일 */
+    .custom-input input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    /* 버튼 스타일 (Streamlit 기본 스타일 유지) */
     div.stButton > button {
-        background-color: #2BC2BD !important; /* 민트색 */
+        background-color: #2BC2BD !important;
         color: white !important;
         padding: 10px 24px !important;
         border-radius: 20px !important;
@@ -75,7 +91,7 @@ if st.session_state.page == 1:
             </div>
         """, unsafe_allow_html=True)
 
-        # ✅ 구매 신청 버튼 (CSS 스타일이 강제 적용됨)
+        # ✅ 구매 신청 버튼
         if st.button("구매 신청", key="next", use_container_width=False):
             change_page(2)
 
@@ -87,13 +103,22 @@ if st.session_state.page == 1:
             </p>
         """, unsafe_allow_html=True)
 
-# ✅ 두 번째 화면
+# ✅ 두 번째 화면 (좌측 정렬)
 elif st.session_state.page == 2:
     with st.container():
         st.markdown("""
-            <div>
-                <h1 style="text-align: center; font-size: 50px; color: black;">2번째 화면</h1>
-                <p style="text-align: center; font-size: 20px; color: #66666D;">이곳에 새로운 내용을 추가할 수 있습니다.</p>
+            <div class="left-align">
+                <!-- 이미지 (크기 50px) -->
+                <img src="https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/asseets/chatbot.png" width="50">
+
+                <!-- 정보 입력 안내 문구 -->
+                <p style="font-size: 18px; margin-top: 10px; font-weight: 400;">정보 조회에 필요한 본인 사번을 입력해주세요.</p>
+
+                <!-- 성명 (폰트 크기 23px) -->
+                <p style="font-size: 23px; font-weight: bold;">성명</p>
+
+                <!-- 입력 필드 -->
+                <input class="custom-input" type="text" placeholder="모를 경우 사번 검색하기">
             </div>
         """, unsafe_allow_html=True)
 
