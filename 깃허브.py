@@ -106,19 +106,25 @@ if st.session_state.page == 1:
 # ✅ 두 번째 화면 (좌측 정렬)
 elif st.session_state.page == 2:
     with st.container():
-        st.markdown("""
-            <div class="left-align">
-                <img src="https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/chatbot.png" width="50">
+        # 이미지 추가
+        st.markdown(
+            '<img src="https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/chatbot.png" width="50">',
+            unsafe_allow_html=True
+        )
 
-                <p style="font-size: 18px; margin-top: 10px; font-weight: 400;">
-                    정보 조회에 필요한 본인 사번을 입력해주세요.
-                </p>
+        # ✅ 안내 문구 (Streamlit Markdown 활용)
+        st.markdown(
+            '<div style="font-size: 18px; margin-top: 10px; font-weight: 400;">정보 조회에 필요한 본인 사번을 입력해주세요.</div>',
+            unsafe_allow_html=True
+        )
 
-                <p style="font-size: 23px; font-weight: bold;">성명</p>
-            </div>
-        """, unsafe_allow_html=True)
+        # ✅ 성명 라벨
+        st.markdown(
+            '<div style="font-size: 23px; font-weight: bold;">성명</div>',
+            unsafe_allow_html=True
+        )
 
-        # ✅ CSS 적용 (입력 필드 여백 및 크기 조정)
+        # ✅ CSS 적용 (입력 필드 크기 및 여백 조정)
         st.markdown("""
             <style>
             div.stTextInput > div > input {
@@ -135,4 +141,5 @@ elif st.session_state.page == 2:
         # ✅ "이전으로" 버튼 (Streamlit 기본 스타일 유지)
         if st.button("이전으로", key="back", use_container_width=False):
             change_page(1)
+
 
