@@ -57,8 +57,6 @@ with st.container():
                 <span style="font-size: 50px; font-weight: bold;">노후장비 개인구매.</span><br>
                 <span style="font-size: 40px; color: #66666D;">네꺼에서 내꺼로.</span>
             </p>
-
-            <!-- 구매 신청 버튼 (동일한 너비 적용) -->
             <button class="custom-btn">구매 신청</button>
         </div>
     """, unsafe_allow_html=True)
