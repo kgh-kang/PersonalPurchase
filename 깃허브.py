@@ -104,6 +104,17 @@ if st.session_state.page == 1:
         """, unsafe_allow_html=True)
 
 # ✅ 두 번째 화면 (좌측 정렬)
+if "page" not in st.session_state:
+    st.session_state.page = 1  # 기본값: 첫 번째 화면
+if "laptop_data" not in st.session_state:
+    st.session_state.laptop_data = None  # 조회 결과 저장
+
+# ✅ 화면 전환 함수
+def change_page(page_number):
+    st.session_state.page = page_number
+    st.rerun()
+
+# ✅ 두 번째 화면
 elif st.session_state.page == 2:
     with st.container():
         # 이미지 추가
@@ -165,21 +176,19 @@ elif st.session_state.page == 2:
             </style>
         """, unsafe_allow_html=True)
 
-        # ✅ 입력 필드 (Streamlit 기본 기능 활용)
-        employee_id = st.text_input("성명", placeholder="모를 경우 사번 검색하기")
+        # ✅ 입력 필드
+        employee_id = st.text_input("사번", placeholder="모를 경우 사번 검색하기")
 
-        # ✅ 조회하기 버튼 (입력값이 있을 때 활성화)
-        if employee_id.strip():  # 값이 입력되었을 때 활성화
-            st.markdown(
-                '<button class="enabled-btn">조회하기</button>',
-                unsafe_allow_html=True
-            )
-        else:  # 값이 없으면 비활성화 (회색)
-            st.markdown(
-                '<button class="disabled-btn" disabled>조회하기</button>',
-                unsafe_allow_html=True
-            )
+        # ✅ 조회하기 버튼 (입력값이 있어야 활성화)
+        if employee_id.strip():
+            if st.button("조회하기"):
+                st.session_state.laptop_data = fetch_assets(employee_id)
 
-        # ✅ "이전으로" 버튼 (Streamlit 기본 스타일 유지)
-        if st.button("이전으로", key="back", use_container_width=False):
+        # ✅ 데이터 출력 (조회 결과가 있을 경우)
+        if st.session_state.laptop_data:
+            df = pd.DataFrame(st.session_state.laptop_data)
+            st.table(df)
+
+        # ✅ "이전으로" 버튼
+        if st.button("이전으로", key="back"):
             change_page(1)
