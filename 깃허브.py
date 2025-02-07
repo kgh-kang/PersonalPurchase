@@ -57,7 +57,7 @@ with st.container():
     st.markdown("""
         <p style='text-align: center; font-family: "Noto Sans KR", sans-serif; line-height: 1.5;'>
             <span style="font-size: 30px; font-weight: bold;">노후장비 개인구매</span><br>
-            <span style="font-size: 18px; font-weight: bold; color: #66666D;">네꺼에서 내꺼로 만들 마지막 기회.</span>
+            <span style="font-size: 18px;">네꺼에서 내꺼로 만들 마지막 기회.</span>
         </p>
     """, unsafe_allow_html=True)
 
@@ -69,8 +69,12 @@ with st.container():
     """, unsafe_allow_html=True)
 
     # 안내 문구 중앙 정렬
-    st.markdown("<h4 style='text-align: center; font-size: 20px; font-family: \"Noto Sans KR\", sans-serif;'>시간이 좀 더 필요하신가요?</h4>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; font-size: 18px; font-family: \"Noto Sans KR\", sans-serif; color: #66666D;'>신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다.</p>", unsafe_allow_html=True)
+    st.markdown("""
+        <p style='text-align: center; font-family: "Noto Sans KR", sans-serif; line-height: 1.5;'>
+            <span style="font-size: 18px; font-weight: bold;">시간이 좀 더 필요하신가요?</span><br>
+            <span style="font-size: 15px;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
+        </p>
+    """, unsafe_allow_html=True)
 
 # ✅ 상단 툴바 숨기기
 st.markdown("""
