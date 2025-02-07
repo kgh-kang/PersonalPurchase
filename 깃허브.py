@@ -108,15 +108,16 @@ elif st.session_state.page == 2:
     with st.container():
         st.markdown("""
             <div class="left-align">
-                <img src="https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/asseets/chatbot.png" width="50">
-
-                <p style="font-size: 18px; margin-top: 10px; font-weight: 400;">정보 조회에 필요한 본인 사번을 입력해주세요.</p>
-
+                <img src="https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/chatbot.png" width="50">
+                <p style="font-size: 18px; margin-top: 10px; font-weight: 400;">
+                    정보 조회에 필요한 본인 사번을 입력해주세요.
+                </p>
                 <p style="font-size: 23px; font-weight: bold;">성명</p>
-
-                <input class="custom-input" type="text" placeholder="모를 경우 사번 검색하기">
             </div>
         """, unsafe_allow_html=True)
+
+        # ✅ 입력 필드 (Streamlit 기본 기능 활용)
+        st.text_input("성명", placeholder="모를 경우 사번 검색하기")
 
         # ✅ "이전으로" 버튼 (Streamlit 기본 스타일 유지)
         if st.button("이전으로", key="back", use_container_width=False):
