@@ -20,7 +20,7 @@ st.markdown("""
     .custom-btn {
         background-color: #2bc2bd !important;
         color: white !important;
-        padding: 8px 24px !important;
+        padding: 5px 24px !important;
         border-radius: 15px !important;
         font-size: 13px !important;
         font-weight: 500;
@@ -67,8 +67,8 @@ with st.container():
     # 안내 문구 중앙 정렬
     st.markdown("""
         <p style='text-align: center; font-family: "Noto Sans KR", sans-serif; line-height: 1.5;'>
-            <span style="font-size: 15px; font-weight: bold;">시간이 좀 더 필요하신가요?</span><br>
-            <span style="font-size: 15px; font-weight: bold;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
+            <span style="font-size: 15px; font-weight: 400;">시간이 좀 더 필요하신가요?</span><br>
+            <span style="font-size: 15px; font-weight: 400;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
         </p>
     """, unsafe_allow_html=True)
 
