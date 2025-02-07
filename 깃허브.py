@@ -20,7 +20,7 @@ st.markdown("""
     .custom-btn {
         background-color: #2bc2bd !important;
         color: white !important;
-        padding: 12px 24px !important;
+        padding: 8px 24px !important;
         border-radius: 15px !important;
         font-size: 13px !important;
         font-weight: 500;
