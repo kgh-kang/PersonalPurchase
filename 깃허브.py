@@ -12,8 +12,16 @@ st.markdown("""
         background-color: #F5F5F7;
     }
 
-    .stButton>button {
-        background-color: #2bc2bd !important; /* 기본 버튼 색상 */
+    /* 버튼 스타일 */
+    .center-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .custom-btn {
+        background-color: #2bc2bd !important;
         color: white !important;
         padding: 12px 24px !important;
         border-radius: 8px !important;
@@ -21,10 +29,14 @@ st.markdown("""
         font-weight: 500;
         border: none;
         font-family: 'Noto Sans KR', sans-serif !important;
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        width: auto;
     }
-    
-    .stButton>button:hover {
-        background-color: #0056b3 !important; /* 더 진한 파란색 */
+
+    .custom-btn:hover {
+        background-color: #0056b3 !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -48,12 +60,12 @@ with st.container():
         </p>
     """, unsafe_allow_html=True)
 
-
-    # ✅ 구매 신청 버튼 (가운데 정렬 + 크기 자동 조정)
-    col1, col2, col3 = st.columns([2, 1, 2])
-    with col2:
-        if st.button("구매 신청하기", use_container_width=False):  # 텍스트에 맞춰 크기 조정
-            st.success("구매 신청이 완료되었습니다!")
+    # ✅ 구매 신청 버튼을 화면 정중앙에 배치
+    st.markdown("""
+        <div class="center-button">
+            <button class="custom-btn">구매 신청하기</button>
+        </div>
+    """, unsafe_allow_html=True)
 
     # 안내 문구 중앙 정렬
     st.markdown("<h4 style='text-align: center; font-size: 20px; font-family: \"Noto Sans KR\", sans-serif;'>시간이 좀 더 필요하신가요?</h4>", unsafe_allow_html=True)
