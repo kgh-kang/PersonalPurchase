@@ -108,15 +108,15 @@ elif st.session_state.page == 2:
     with st.container():
         # 이미지 추가
         st.markdown(
-            '<img src="https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/chatbot.png" width="30">',
+            f"<p style='text-align: center; margin-top: 20px; margin-bottom: 10px;'><img src="https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/chatbot.png" width="30">,
             unsafe_allow_html=True
         )
 
         # ✅ 안내 문구 (Streamlit Markdown 활용)
         st.markdown("""
             <p style='font-family: "Noto Sans KR", sans-serif;'>
-                <span style="font-size: 20px; font-weight: 400;">사번 입력.</span>
-                <span style="font-size: 20px; font-weight: 400; color: #66666D;">구매 신청하시는 당신은 누군가요?</span>
+                <span style="font-size: 25px; font-weight: 400; font-weight: bold;">사번 입력.</span>
+                <span style="font-size: 25px; font-weight: 400; color: #66666D;">구매 신청하시는 당신은 누군가요?</span>
             </p>
         """, unsafe_allow_html=True)
 
