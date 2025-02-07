@@ -7,6 +7,11 @@ st.set_page_config(page_title="노후장비 개인구매", layout="wide")
 if "page" not in st.session_state:
     st.session_state.page = 1  # 기본값: 첫 번째 화면
 
+# ✅ 화면 전환 함수 (버튼 클릭 시 즉시 적용)
+def change_page(page_number):
+    st.session_state.page = page_number
+    st.rerun()  # 🔹 상태 변경 후 즉시 새로고침하여 한 번의 클릭으로 동작하도록 함
+
 # ✅ CSS 적용 (버튼 디자인 복구 + 애니메이션)
 st.markdown("""
     <style>
@@ -80,7 +85,7 @@ if st.session_state.page == 1:
 
         # ✅ 구매 신청 버튼 (디자인 복구 & 한 번 클릭으로 동작)
         if st.button("구매 신청", key="next"):
-            st.session_state.page = 2
+            change_page(2)  # 🔹 페이지 변경 후 즉시 새로고침
 
         # ✅ 안내 문구
         st.markdown("""
@@ -102,4 +107,4 @@ elif st.session_state.page == 2:
 
         # 뒤로 가기 버튼 (첫 번째 화면으로 복귀, 기존 디자인 유지)
         if st.button("이전으로", key="back"):
-            st.session_state.page = 1
+            change_page(1)  # 🔹 페이지 변경 후 즉시 새로고침
