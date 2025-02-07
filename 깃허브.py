@@ -7,7 +7,7 @@ st.set_page_config(page_title="노후장비 개인구매", layout="wide")
 
 # ✅ API 호출 함수
 def fetch_assets(user_number):
-    url = f"http://assets.woowa.in/x1/api/help-desk/assets/user/{user_number}"
+    url = f"http://assets.woowa.in/x1/api/help-desk/assets/user/23080058"
     headers = {
         "Authorization": "Bearer help-desk-2e503c87-492f-4665-9a45-9a5517aa2e76",
         "asset-user-number": "23080058"
