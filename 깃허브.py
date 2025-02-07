@@ -17,7 +17,7 @@ st.markdown("""
         background-color: #2BC2BD !important;
         color: white !important;
         padding: 5px 24px !important;
-        border-radius: 30px !important;
+        border-radius: 20px !important;
         font-size: 20px !important;
         font-weight: 400;
         border: none;
@@ -25,7 +25,7 @@ st.markdown("""
         cursor: pointer;
         text-align: center;
         display: inline-block;
-        width: 500px;
+        width: 400px;
     }
     .custom-btn:hover {
         background-color: #0056B3 !important;
@@ -38,7 +38,7 @@ GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/m
 with st.container():
     # 이미지 중앙 정렬 및 크기 조절
     st.markdown(
-        f"<p style='text-align: center; margin-top: 60px; margin-bottom: 70px;>?'><img src='{GITHUB_IMAGE_URL}' width='130'></p>",
+        f"<p style='text-align: center; margin-top: 100px; margin-bottom: 70px;>?'><img src='{GITHUB_IMAGE_URL}' width='130'></p>",
         unsafe_allow_html=True
     )
     # :흰색_확인_표시: 제목과 서브타이틀에서 폰트를 직접 지정
