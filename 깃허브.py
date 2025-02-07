@@ -16,28 +16,39 @@ st.markdown("""
     .stButton>button {
         background-color: #0071E3 !important; /* 기본 버튼 색상 */
         color: white !important;
-        padding: 14px 30px !important;
+        padding: 10px 24px !important;
         border-radius: 30px !important; /* 더 둥글게 */
         font-size: 18px !important;
         font-weight: 500;
         border: none;
         font-family: 'Noto Sans KR', sans-serif !important;
+        margin-top: 10px !important;  /* 버튼 위 간격 줄이기 */
+        margin-bottom: 10px !important; /* 버튼 아래 간격 줄이기 */
     }
     
     .stButton>button:hover {
         background-color: #0056b3 !important; /* 더 진한 파란색 */
     }
 
-    /* 제목과 서브타이틀 간격 줄이기 */
+    /* 제목과 서브타이틀 간격 더 줄이기 */
     h1 {
-        margin-bottom: 5px !important; /* 제목과 서브타이틀 간격 축소 */
+        margin-bottom: 2px !important; /* 제목과 서브타이틀 간격 축소 */
     }
     
     h3 {
-        margin-top: 0px !important; /* 서브타이틀의 상단 여백 축소 */
-        margin-bottom: 15px !important; /* 하단 간격 줄이기 */
+        margin-top: -5px !important; /* 서브타이틀 위 간격 줄이기 */
+        margin-bottom: 10px !important; /* 서브타이틀과 버튼 간격 줄이기 */
     }
 
+    /* 안내 문구 마진 줄이기 */
+    h4 {
+        margin-bottom: 5px !important;
+    }
+
+    p {
+        margin-bottom: 5px !important;
+    }
+    
     </style>
 """, unsafe_allow_html=True)
 
@@ -52,17 +63,17 @@ with st.container():
         unsafe_allow_html=True
     )
 
-    # ✅ 제목과 서브타이틀에서 폰트를 직접 지정 & 간격 줄이기
+    # ✅ 제목과 서브타이틀에서 폰트를 직접 지정 & 간격 더 줄이기
     st.markdown("<h1 style='text-align: center; font-size: 35px; font-family: \"Noto Sans KR\", sans-serif;'>노후장비 개인구매</h1>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: center; font-size: 18px; font-family: \"Noto Sans KR\", sans-serif; color: #66666D;'>네꺼에서 내꺼로 만들 마지막 기회.</h3>", unsafe_allow_html=True)
 
-    # ✅ 구매 신청 버튼 (정확히 중앙 배치 & 크기 조정)
+    # ✅ 구매 신청 버튼 (정확히 중앙 배치 & 간격 줄이기)
     col1, col2, col3 = st.columns([1, 1, 1])  # 균등 배분하여 버튼이 중앙에 오도록 함
     with col2:
         if st.button("구매 신청하기", use_container_width=False):  # 텍스트에 맞춰 크기 조정
             st.success("구매 신청이 완료되었습니다!")
 
-    # 안내 문구 중앙 정렬
+    # 안내 문구 중앙 정렬 (간격 줄이기 적용)
     st.markdown("<h4 style='text-align: center; font-size: 15px; font-family: \"Noto Sans KR\", sans-serif;'>시간이 좀 더 필요하신가요?</h4>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; font-size: 12px; font-family: \"Noto Sans KR\", sans-serif; color: #66666D;'>신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다.</p>", unsafe_allow_html=True)
 
