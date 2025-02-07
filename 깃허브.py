@@ -106,13 +106,14 @@ if st.session_state.page == 1:
 # ✅ 두 번째 화면 (좌측 정렬)
 elif st.session_state.page == 2:
     with st.container():
+        # 이미지 추가
         st.markdown(
             f"<p style='margin-top: 20px; margin-bottom: 10px;'>"
             f"<img src='https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/chatbot.png' width='30'></p>",
             unsafe_allow_html=True
         )
 
-        # ✅ 안내 문구 (Streamlit Markdown 활용)
+        # ✅ 안내 문구
         st.markdown("""
             <p style='font-family: "Noto Sans KR", sans-serif;'>
                 <span style="font-size: 25px; font-weight: 400; font-weight: bold;">사번 입력.</span>
@@ -128,11 +129,56 @@ elif st.session_state.page == 2:
                 padding: 10px !important;
                 border-radius: 8px !important;
             }
+            
+            /* 조회하기 버튼 스타일 */
+            .disabled-btn {
+                background-color: #D3D3D3 !important; /* 회색 (비활성화) */
+                color: white !important;
+                padding: 10px 24px !important;
+                border-radius: 20px !important;
+                font-size: 20px !important;
+                font-weight: 400;
+                border: none;
+                font-family: 'Noto Sans KR', sans-serif !important;
+                cursor: not-allowed;
+                text-align: center;
+                width: 400px !important;
+                display: block;
+                margin: auto;
+            }
+
+            .enabled-btn {
+                background-color: #2BC2BD !important; /* 민트색 (활성화) */
+                color: white !important;
+                padding: 10px 24px !important;
+                border-radius: 20px !important;
+                font-size: 20px !important;
+                font-weight: 400;
+                border: none;
+                font-family: 'Noto Sans KR', sans-serif !important;
+                cursor: pointer;
+                text-align: center;
+                width: 400px !important;
+                display: block;
+                margin: auto;
+            }
             </style>
         """, unsafe_allow_html=True)
 
         # ✅ 입력 필드 (Streamlit 기본 기능 활용)
-        st.text_input("성명", placeholder="모를 경우 사번 검색하기")
+        employee_id = st.text_input("성명", placeholder="모를 경우 사번 검색하기")
+
+        # ✅ 조회하기 버튼 (입력값이 있을 때 활성화)
+        if employee_id.strip():  # 값이 입력되었을 때 활성화
+            st.markdown(
+                '<button class="enabled-btn">조회하기</button>',
+                unsafe_allow_html=True
+            )
+        else:  # 값이 없으면 비활성화 (회색)
+            st.markdown(
+                '<button class="disabled-btn" disabled>조회하기</button>',
+                unsafe_allow_html=True
+            )
 
         # ✅ "이전으로" 버튼 (Streamlit 기본 스타일 유지)
         if st.button("이전으로", key="back", use_container_width=False):
