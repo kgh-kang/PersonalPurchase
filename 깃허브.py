@@ -11,7 +11,7 @@ st.markdown("<h1 style='text-align: center; font-size: 70px;'>노후장비 개�
 st.markdown("<h3 style='text-align: center; color: #66666D;'>₩10,000부터</h3>", unsafe_allow_html=True)
 
 # GitHub에서 직접 이미지 로드
-st.image(GITHUB_IMAGE_URL, use_container_width=True)  # 변경된 부분
+st.image(GITHUB_IMAGE_URL, use_container_width=300)  # 변경된 부분
 
 # 버튼 생성
 if st.button("구매 신청하기", use_container_width=True):  # 버튼도 화면 크기에 맞게 조정
