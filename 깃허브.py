@@ -8,7 +8,7 @@ GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/m
 
 # Streamlit 실행
 st.markdown(
-    f"<p style='text-align: center;'><img src='{GITHUB_IMAGE_URL}' width='300'></p>",
+    f"<p style='text-align: center;'><img src='{GITHUB_IMAGE_URL}' width='150'></p>",
     unsafe_allow_html=True
 )
 st.markdown("<h1 style='text-align: center; font-size: 70px;'>노후장비 개인구매</h1>", unsafe_allow_html=True)
