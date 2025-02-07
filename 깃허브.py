@@ -3,17 +3,16 @@ import streamlit as st
 # Streamlit 설정
 st.set_page_config(page_title="노후장비 개인구매", layout="wide")
 
-# ✅ 배경색을 회색(#F0F0F0)으로 변경
 st.markdown("""
     <style>
     body {
-        background-color: #F0F0F0;
+        background-color: #F5F5F7;
     }
     .stApp {
-        background-color: #F0F0F0;
+        background-color: #F5F5F7;
     }
     .stButton>button {
-        background-color: #007BFF !important; /* 파란색 */
+        background-color: #2bc2bd !important; /* 파란색 */
         color: white !important;
         padding: 10px 20px !important;
         border-radius: 8px !important;
@@ -32,13 +31,13 @@ GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/m
 with st.container():
     # 이미지 중앙 정렬 및 크기 조절
     st.markdown(
-        f"<p style='text-align: center;'><img src='{GITHUB_IMAGE_URL}' width='150'></p>",
+        f"<p style='text-align: center;'><img src='{GITHUB_IMAGE_URL}' width='130'></p>",
         unsafe_allow_html=True
     )
 
     # 제목 중앙 정렬
     st.markdown("<h1 style='text-align: center; font-size: 50px;'>노후장비 개인구매</h1>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center; color: #66666D;'>₩10,000부터</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: #66666D;'>네꺼에서 내꺼로 만들 \n 마지막 기화.</h3>", unsafe_allow_html=True)
 
     # ✅ 구매 신청 버튼 (가운데 정렬 + 크기 자동 조정)
     col1, col2, col3 = st.columns([2, 1, 2])
