@@ -43,9 +43,8 @@ with st.container():
     # ✅ 제목과 서브타이틀에서 폰트를 직접 지정
     st.markdown("""
         <p style='text-align: center; font-family: "Noto Sans KR", sans-serif; line-height: 1.5;'>
-            <span style="font-size: 35px; font-weight: bold;">노후장비 개인구매</span><br>
-            <span style="font-size: 18px; color: #66666D;">네꺼에서 내꺼로 만들</span><br>
-            <span style="font-size: 18px; color: #66666D;">마지막 기회</span>
+            <span style="font-size: 35px; font-weight: bold;">노후장비 개인구매.</span><br>
+            <span style="font-size: 18px; font-weight: bold; color: #66666D;">네꺼에서 내꺼로 만들 마지막 기회.</span>
         </p>
     """, unsafe_allow_html=True)
 
