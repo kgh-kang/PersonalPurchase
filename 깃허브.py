@@ -15,14 +15,15 @@ st.markdown("""
         align-items: center;
         text-align: center;
         width: 550px; /* 🔹 "노후장비 개인구매."의 너비와 동일하게 설정 */
-        margin: 0 auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     /* 버튼 스타일 */
     .custom-btn {
         background-color: #2BC2BD !important;
         color: white !important;
-        padding: 15px 0px !important; /* 세로 크기 조정 */
+        padding: 2px 0px !important; /* 세로 크기 조정 */
         border-radius: 30px !important;
         font-size: 20px !important;
         font-weight: 400;
@@ -30,7 +31,7 @@ st.markdown("""
         font-family: 'Noto Sans KR', sans-serif !important;
         cursor: pointer;
         text-align: center;
-        width: 100%; /* 🔹 부모 컨테이너(title-container)의 너비와 동일하게 설정 */
+        width: 90%; /* 🔹 부모 컨테이너(title-container)의 너비와 동일하게 설정 */
     }
 
     .custom-btn:hover {
