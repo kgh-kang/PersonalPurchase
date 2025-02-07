@@ -16,7 +16,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # GitHub 이미지 URL (사용자명/저장소명 변경)
-GITHUB_IMAGE_URL = "GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/image_1.png"
+GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/image_1.png"
 
 # 이미지 중앙 정렬 및 크기 조절
 st.markdown(
