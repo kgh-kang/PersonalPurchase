@@ -1,5 +1,9 @@
 import streamlit as st
 
+html, body, .stApp {
+    background-color: #F5F5F7 !important;
+}
+
 # Streamlit 설정
 st.set_page_config(page_title="노후장비 개인구매", layout="wide")
 
