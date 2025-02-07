@@ -7,11 +7,7 @@ st.set_page_config(page_title="노후장비 개인구매", layout="wide")
 if "page" not in st.session_state:
     st.session_state.page = 1  # 기본값: 첫 번째 화면
 
-# ✅ 버튼 클릭 시 두 번째 화면으로 전환
-def go_to_next():
-    st.session_state.page = 2  # 두 번째 화면으로 변경
-
-# ✅ CSS 적용 (애니메이션 효과 추가)
+# ✅ CSS 적용 (애니메이션 효과 + 버튼 디자인 정상화)
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
@@ -41,10 +37,20 @@ st.markdown("""
         font-family: 'Noto Sans KR', sans-serif !important;
         cursor: pointer;
         text-align: center;
-        display: inline-block;
+        display: block;
         width: 400px;
+        margin: auto;
     }
     </style>
+""", unsafe_allow_html=True)
+
+# ✅ 상단 툴바 숨기기 (복구)
+st.markdown("""
+<style>
+.stApp [data-testid="stToolbar"] {
+    display: none;
+}
+</style>
 """, unsafe_allow_html=True)
 
 # ✅ 첫 번째 화면 (기본 화면)
@@ -68,7 +74,7 @@ if st.session_state.page == 1:
 
         # ✅ 구매 신청 버튼 (클릭 시 다음 화면으로 전환)
         if st.button("구매 신청", key="next", use_container_width=False):
-            go_to_next()
+            st.session_state.page = 2  # 일반 클릭으로 한 번만 이동 가능하도록 수정
 
         # ✅ 안내 문구
         st.markdown("""
