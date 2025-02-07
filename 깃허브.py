@@ -10,9 +10,9 @@ if "page" not in st.session_state:
 # ✅ 화면 전환 함수 (버튼 클릭 시 즉시 적용)
 def change_page(page_number):
     st.session_state.page = page_number
-    st.rerun()  # 🔹 상태 변경 후 즉시 새로고침하여 한 번의 클릭으로 동작하도록 함
+    st.rerun()
 
-# ✅ CSS 적용 (구매 신청 버튼 디자인 적용)
+# ✅ CSS 적용 (Streamlit 버튼을 강제로 스타일 변경)
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
@@ -24,9 +24,9 @@ st.markdown("""
         padding: 0;
     }
 
-    /* 구매 신청 버튼 (민트색, 너비 400px) */
-    .custom-btn {
-        background-color: #2BC2BD !important;
+    /* Streamlit 기본 버튼 스타일 강제 변경 */
+    div.stButton > button {
+        background-color: #2BC2BD !important; /* 민트색 */
         color: white !important;
         padding: 10px 24px !important;
         border-radius: 20px !important;
@@ -36,12 +36,12 @@ st.markdown("""
         font-family: 'Noto Sans KR', sans-serif !important;
         cursor: pointer;
         text-align: center;
+        width: 400px !important;
         display: block;
-        width: 400px;
         margin: auto;
     }
 
-    .custom-btn:hover {
+    div.stButton > button:hover {
         background-color: #0056B3 !important;
     }
     </style>
@@ -56,7 +56,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ✅ 첫 번째 화면 (기본 화면)
+# ✅ 첫 번째 화면
 if st.session_state.page == 1:
     with st.container():
         # 이미지 중앙 정렬 및 크기 조절
@@ -75,9 +75,9 @@ if st.session_state.page == 1:
             </div>
         """, unsafe_allow_html=True)
 
-        # ✅ 구매 신청 버튼 (디자인 복구 & 한 번 클릭으로 동작)
+        # ✅ 구매 신청 버튼 (CSS 스타일이 강제 적용됨)
         if st.button("구매 신청", key="next", use_container_width=False):
-            change_page(2)  # 🔹 페이지 변경 후 즉시 새로고침
+            change_page(2)
 
         # ✅ 안내 문구
         st.markdown("""
@@ -87,7 +87,7 @@ if st.session_state.page == 1:
             </p>
         """, unsafe_allow_html=True)
 
-# ✅ 두 번째 화면 (버튼 클릭 후 나타나는 화면)
+# ✅ 두 번째 화면
 elif st.session_state.page == 2:
     with st.container():
         st.markdown("""
@@ -97,6 +97,6 @@ elif st.session_state.page == 2:
             </div>
         """, unsafe_allow_html=True)
 
-        # ✅ "이전으로" 버튼 (Streamlit 기본 버튼 스타일 유지)
+        # ✅ "이전으로" 버튼 (Streamlit 기본 스타일 유지)
         if st.button("이전으로", key="back", use_container_width=False):
             change_page(1)
