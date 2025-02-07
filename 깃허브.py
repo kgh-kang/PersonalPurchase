@@ -11,15 +11,15 @@ st.markdown("""
         justify-content: center;
         align-items: center;
         margin-top: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
     .custom-btn {
         background-color: #2BC2BD !important;
         color: white !important;
         padding: 5px 24px !important;
-        border-radius: 15px !important;
-        font-size: 13px !important;
-        font-weight: 500;
+        border-radius: 30px !important;
+        font-size: 20px !important;
+        font-weight: 400;
         border: none;
         font-family: 'Noto Sans KR', sans-serif !important;
         cursor: pointer;
@@ -38,7 +38,7 @@ GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/m
 with st.container():
     # 이미지 중앙 정렬 및 크기 조절
     st.markdown(
-        f"<p style='text-align: center; margin-top: 50px; margin-bottom: 70px;>?'><img src='{GITHUB_IMAGE_URL}' width='130'></p>",
+        f"<p style='text-align: center; margin-top: 60px; margin-bottom: 70px;>?'><img src='{GITHUB_IMAGE_URL}' width='130'></p>",
         unsafe_allow_html=True
     )
     # :흰색_확인_표시: 제목과 서브타이틀에서 폰트를 직접 지정
@@ -51,7 +51,7 @@ with st.container():
     # :흰색_확인_표시: 구매 신청 버튼을 화면 정중앙에 배치
     st.markdown("""
         <div class="center-button">
-            <button class="custom-btn">구매 신청하기</button>
+            <button class="custom-btn">구매 신청</button>
         </div>
     """, unsafe_allow_html=True)
     # 안내 문구 중앙 정렬
