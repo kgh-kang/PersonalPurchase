@@ -8,10 +8,6 @@ st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 
-    body, .stApp {
-        background-color: #F5F5F7;
-    }
-
     /* 버튼 스타일 */
     .center-button {
         display: flex;
@@ -71,8 +67,8 @@ with st.container():
     # 안내 문구 중앙 정렬
     st.markdown("""
         <p style='text-align: center; font-family: "Noto Sans KR", sans-serif; line-height: 1.5;'>
-            <span style="font-size: 18px; font-weight: bold;">시간이 좀 더 필요하신가요?</span><br>
-            <span style="font-size: 15px;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
+            <span style="font-size: 15px; font-weight: bold;">시간이 좀 더 필요하신가요?</span><br>
+            <span style="font-size: 15px; font-weight: bold;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
         </p>
     """, unsafe_allow_html=True)
 
