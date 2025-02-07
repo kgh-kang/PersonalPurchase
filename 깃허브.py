@@ -112,7 +112,7 @@ elif st.session_state.page == 2:
             unsafe_allow_html=True
         )
 
-        # ✅ 안내 문구 (Streamlit Markdown 활용)
+        # ✅ 안내 문구
         st.markdown(
             '<div style="font-size: 18px; margin-top: 10px; font-weight: 400;">정보 조회에 필요한 본인 사번을 입력해주세요.</div>',
             unsafe_allow_html=True
@@ -127,7 +127,7 @@ elif st.session_state.page == 2:
         # ✅ CSS 적용 (입력 필드 크기 및 여백 조정)
         st.markdown("""
             <style>
-            div.stTextInput > div > input {
+            div.stNumberInput > div > input {
                 width: 400px !important;
                 padding: 10px !important;
                 border-radius: 8px !important;
@@ -135,8 +135,8 @@ elif st.session_state.page == 2:
             </style>
         """, unsafe_allow_html=True)
 
-        # ✅ 입력 필드 (Streamlit 기본 기능 활용)
-        st.text_input("성명", placeholder="모를 경우 사번 검색하기")
+        # ✅ 숫자 입력 필드 (Streamlit 기본 기능 활용, 숫자 키보드 활성화)
+        st.number_input("성명 (사번 입력)", min_value=0, step=1, format="%d", placeholder="모를 경우 사번 검색하기")
 
         # ✅ "이전으로" 버튼 (Streamlit 기본 스타일 유지)
         if st.button("이전으로", key="back", use_container_width=False):
