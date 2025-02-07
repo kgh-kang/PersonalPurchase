@@ -3,7 +3,7 @@ import requests
 
 # ✅ API 정보
 BASE_URL = "http://assets.woowa.in/x1/api/help-desk/assets/user"
-API_KEY = "실제키"  # 🔹 실제 API 키 입력
+API_KEY = "Bearer help-desk-2e503c87-492f-4665-9a45-9a5517aa2e76"  # 🔹 실제 API 키 입력
 USER_NUMBER = "23080058"  # 🔹 조회하는 유저 사번 (고정)
 
 headers = {
