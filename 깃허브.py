@@ -106,9 +106,9 @@ if st.session_state.page == 1:
 # ✅ 두 번째 화면 (좌측 정렬)
 elif st.session_state.page == 2:
     with st.container():
-        # 이미지 추가
         st.markdown(
-            f"<p style='text-align: center; margin-top: 20px; margin-bottom: 10px;'><img src="https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/chatbot.png" width="30">,
+            f"<p style='text-align: center; margin-top: 20px; margin-bottom: 10px;'>"
+            f"<img src='https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/chatbot.png' width='30'></p>",
             unsafe_allow_html=True
         )
 
