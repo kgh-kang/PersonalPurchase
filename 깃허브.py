@@ -108,13 +108,10 @@ elif st.session_state.page == 2:
     with st.container():
         st.markdown("""
             <div class="left-align">
-                <!-- 이미지 (크기 50px) -->
                 <img src="https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/asseets/chatbot.png" width="50">
 
-                <!-- 정보 입력 안내 문구 -->
                 <p style="font-size: 18px; margin-top: 10px; font-weight: 400;">정보 조회에 필요한 본인 사번을 입력해주세요.</p>
 
-                <!-- 성명 (폰트 크기 23px) -->
                 <p style="font-size: 23px; font-weight: bold;">성명</p>
 
                 <!-- 입력 필드 -->
