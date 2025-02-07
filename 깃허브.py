@@ -44,7 +44,7 @@ GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/m
 with st.container():
     # 이미지 중앙 정렬
     st.markdown(
-        f"<p style='text-align: center; margin-top: 50px; margin-bottom: 70px;'><img src='{GITHUB_IMAGE_URL}' width='120'></p>",
+        f"<p style='text-align: center; margin-top: 50px; margin-bottom: 70px;'><img src='{GITHUB_IMAGE_URL}' width='150'></p>",
         unsafe_allow_html=True
     )
 
@@ -54,8 +54,8 @@ with st.container():
     # ✅ 제목 및 서브타이틀 (좌측 정렬)
     st.markdown("""
         <p style='font-family: "Noto Sans KR", sans-serif; line-height: 1.5;'>
-            <span style="font-size: 70px; font-weight: bold;">노후장비 개인구매.</span><span style="font-size: 70px; color: #66666D;">네꺼에서</span><br>
-            <span style="font-size: 70px; color: #66666D;">내꺼로.</span>
+            <span style="font-size: 60px; font-weight: bold;">노후장비 개인구매.</span><span style="font-size: 60px; color: #66666D;">네꺼에서</span><br>
+            <span style="font-size: 60px; color: #66666D;">내꺼로.</span>
         </p>
     """, unsafe_allow_html=True)
 
