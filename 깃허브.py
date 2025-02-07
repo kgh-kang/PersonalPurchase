@@ -20,7 +20,7 @@ st.markdown("""
         color: white !important;
         padding: 5px 24px !important;
         border-radius: 15px !important;
-        font-size: 13px !important;
+        font-size: 35px !important;
         font-weight: 500;
         border: none;
         font-family: 'Noto Sans KR', sans-serif !important;
@@ -54,7 +54,7 @@ with st.container():
     # ✅ 제목 및 서브타이틀 (좌측 정렬)
     st.markdown("""
         <p style='font-family: "Noto Sans KR", sans-serif; line-height: 1.5;'>
-            <span style="font-size: 60px; font-weight: bold;">노후장비 개인구매.</span><span style="font-size: 60px; color: #66666D;">네꺼에서</span><br>
+            <span style="font-size: 60px; font-weight: bold;">노후장비 개인구매.</span><span style="font-size: 60px; color: #66666D;"> 네꺼에서</span><br>
             <span style="font-size: 60px; color: #66666D;">내꺼로.</span>
         </p>
     """, unsafe_allow_html=True)
@@ -67,8 +67,8 @@ with st.container():
     # ✅ 안내 문구 (좌측 정렬)
     st.markdown("""
         <p style='font-family: "Noto Sans KR", sans-serif; line-height: 1.5;'>
-            <span style="font-size: 15px; font-weight: 400;">시간이 좀 더 필요하신가요?</span><br>
-            <span style="font-size: 15px; font-weight: 400;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
+            <span style="font-size: 35px; font-weight: 400;">시간이 좀 더 필요하신가요?</span><br>
+            <span style="font-size: 35px; font-weight: 400;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
         </p>
     """, unsafe_allow_html=True)
 
