@@ -28,7 +28,7 @@ st.markdown("""
     .custom-btn {
         background-color: #2BC2BD !important;
         color: white !important;
-        padding: 5px 24px !important;
+        padding: 10px 24px !important;
         border-radius: 20px !important;
         font-size: 20px !important;
         font-weight: 400;
@@ -36,8 +36,9 @@ st.markdown("""
         font-family: 'Noto Sans KR', sans-serif !important;
         cursor: pointer;
         text-align: center;
-        display: inline-block;
+        display: block;
         width: 400px;
+        margin: auto;
     }
 
     .custom-btn:hover {
@@ -74,12 +75,9 @@ if st.session_state.page == 1:
             </div>
         """, unsafe_allow_html=True)
 
-        # ✅ 구매 신청 버튼 (HTML + CSS 스타일 적용)
-        st.markdown("""
-            <div style="text-align: center; margin-top: 20px;">
-                <button class="custom-btn" onclick="window.location.href='?page=2'">구매 신청</button>
-            </div>
-        """, unsafe_allow_html=True)
+        # ✅ 구매 신청 버튼 (디자인 복구 & 한 번 클릭으로 동작)
+        if st.button("구매 신청", key="next", use_container_width=False):
+            change_page(2)  # 🔹 페이지 변경 후 즉시 새로고침
 
         # ✅ 안내 문구
         st.markdown("""
@@ -88,10 +86,6 @@ if st.session_state.page == 1:
                 <span style="font-size: 13px; font-weight: 400; color: #66666D;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
             </p>
         """, unsafe_allow_html=True)
-
-        # ✅ 구매 신청 버튼 클릭 시 페이지 이동
-        if st.button("구매 신청", key="next"):
-            change_page(2)
 
 # ✅ 두 번째 화면 (버튼 클릭 후 나타나는 화면)
 elif st.session_state.page == 2:
@@ -104,5 +98,5 @@ elif st.session_state.page == 2:
         """, unsafe_allow_html=True)
 
         # ✅ "이전으로" 버튼 (Streamlit 기본 버튼 스타일 유지)
-        if st.button("이전으로", key="back"):
+        if st.button("이전으로", key="back", use_container_width=False):
             change_page(1)
