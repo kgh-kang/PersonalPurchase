@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # ✅ API 정보
-BASE_URL = "http://assets.woowa.in/x1/api/help-desk/assets/user"
+BASE_URL = "https://assets.woowa.in/x1/api/help-desk/assets/user"
 API_KEY = "Bearer help-desk-2e503c87-492f-4665-9a45-9a5517aa2e76"  # 🔹 API 키 입력
 USER_NUMBER = "23080058"  # 🔹 기본 사용자 번호
 
