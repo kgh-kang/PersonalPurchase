@@ -24,6 +24,14 @@ st.markdown('''
 </style>
 ''', unsafe_allow_html=True)
 
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
 # 버튼 생성 (가운데 정렬)
 col1, col2, col3 = st.columns([1, 2, 1])  # 버튼을 중앙 정렬하기 위한 레이아웃 설정
 with col2:
