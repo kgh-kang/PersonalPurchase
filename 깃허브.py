@@ -10,18 +10,19 @@ st.markdown("""
 
     html, body, .stApp {
         background-color: #F5F5F7 !important;
-        height: 100vh;
         margin: 0;
         padding: 0;
+        height: 100%;
+        width: 100%;
     }
 
-    /* 모든 요소를 정중앙 배치 (가로+세로) */
-    .fullscreen-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* 화면 높이 100% */
+    /* 현재 창 크기에 따라 동적으로 정중앙 배치 */
+    .center-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
     }
 
     /* 버튼 스타일 */
@@ -49,8 +50,8 @@ st.markdown("""
 # GitHub 이미지 URL
 GITHUB_IMAGE_URL = "https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/image_1.png"
 
-# ✅ 전체 화면 정중앙 배치
-st.markdown('<div class="fullscreen-container">', unsafe_allow_html=True)
+# ✅ 현재 창 크기 기준으로 정중앙 배치
+st.markdown('<div class="center-container">', unsafe_allow_html=True)
 
 # 이미지 중앙 정렬
 st.markdown(
@@ -68,7 +69,7 @@ st.markdown("""
 
 # ✅ 구매 신청 버튼을 화면 정중앙에 배치
 st.markdown("""
-    <div class="center-button">
+    <div>
         <button class="custom-btn">구매 신청하기</button>
     </div>
 """, unsafe_allow_html=True)
