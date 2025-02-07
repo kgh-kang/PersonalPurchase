@@ -57,8 +57,8 @@ with st.container():
     # 안내 문구 중앙 정렬
     st.markdown("""
         <p style='text-align: center; font-family: "Noto Sans KR", sans-serif; line-height: 1.5;'>
-            <span style="font-size: 30px; font-weight: 400; color: #66666D;">시간이 좀 더 필요하신가요?</span><br>
-            <span style="font-size: 30px; font-weight: 400; color: #66666D;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
+            <span style="font-size: 15px; font-weight: bold; font-weight: 400;">시간이 좀 더 필요하신가요?</span><br>
+            <span style="font-size: 13px; font-weight: 400; color: #66666D;">신규 장비 수령 후 2주가 지나면 구매 기회가 사라집니다</span>
         </p>
     """, unsafe_allow_html=True)
 # :흰색_확인_표시: 상단 툴바 숨기기
