@@ -107,7 +107,7 @@ if st.session_state.page == 1:
 elif st.session_state.page == 2:
     with st.container():
         st.markdown(
-            f"<p style='text-align: center; margin-top: 20px; margin-bottom: 10px;'>"
+            f"<p style='margin-top: 20px; margin-bottom: 10px;'>"
             f"<img src='https://raw.githubusercontent.com/kgh-kang/Test/refs/heads/main/assets/chatbot.png' width='30'></p>",
             unsafe_allow_html=True
         )
