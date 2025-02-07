@@ -24,20 +24,44 @@ st.markdown("""
         font-family: 'Noto Sans KR', sans-serif !important;
         margin-top: 10px !important;  /* 버튼 위 간격 줄이기 */
         margin-bottom: 10px !important; /* 버튼 아래 간격 줄이기 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px; /* 버튼 크기 고정 */
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .stButton>button:hover {
         background-color: #0056b3 !important; /* 더 진한 파란색 */
     }
 
-    /* 제목과 서브타이틀 간격 더 줄이기 */
+    /* 제목 스타일 */
     h1 {
-        margin-bottom: 2px !important; /* 제목과 서브타이틀 간격 축소 */
+        font-size: 35px !important; /* "노후장비 개인구매" 폰트 크기 */
+        text-align: center;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 700;
+        margin-bottom: 5px;
     }
-    
-    h3 {
-        margin-top: -5px !important; /* 서브타이틀 위 간격 줄이기 */
-        margin-bottom: 10px !important; /* 서브타이틀과 버튼 간격 줄이기 */
+
+    /* 서브 타이틀 스타일 */
+    .subtitle {
+        font-size: 18px !important;
+        text-align: center;
+        font-family: 'Noto Sans KR', sans-serif;
+        color: #66666D;
+        margin-top: -5px;
+        margin-bottom: 5px;
+    }
+
+    /* "마지막 기회" 스타일 */
+    .last-chance {
+        font-size: 18px !important;
+        text-align: center;
+        font-family: 'Noto Sans KR', sans-serif;
+        color: #66666D;
+        font-weight: bold;
     }
 
     /* 안내 문구 마진 줄이기 */
@@ -64,14 +88,12 @@ with st.container():
     )
 
     # ✅ 제목과 서브타이틀에서 폰트를 직접 지정 & 간격 더 줄이기
-    st.markdown("<h1 style='text-align: center; font-size: 35px; font-family: \"Noto Sans KR\", sans-serif;'>노후장비 개인구매</h1>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center; font-size: 18px; font-family: \"Noto Sans KR\", sans-serif; color: #66666D;'>네꺼에서 내꺼로 만들 마지막 기회.</h3>", unsafe_allow_html=True)
+    st.markdown("<h1>노후장비 개인구매</h1>", unsafe_allow_html=True)
+    st.markdown("<p class='subtitle'>네꺼에서 내꺼로 만들</p>", unsafe_allow_html=True)
+    st.markdown("<p class='last-chance'>마지막 기회</p>", unsafe_allow_html=True)
 
-    # ✅ 구매 신청 버튼 (정확히 중앙 배치 & 간격 줄이기)
-    col1, col2, col3 = st.columns([1, 1, 1])  # 균등 배분하여 버튼이 중앙에 오도록 함
-    with col2:
-        if st.button("구매 신청하기", use_container_width=False):  # 텍스트에 맞춰 크기 조정
-            st.success("구매 신청이 완료되었습니다!")
+    # ✅ 구매 신청 버튼 (정중앙 배치)
+    st.markdown("<div style='text-align: center;'><button class='stButton'>구매 신청하기</button></div>", unsafe_allow_html=True)
 
     # 안내 문구 중앙 정렬 (간격 줄이기 적용)
     st.markdown("<h4 style='text-align: center; font-size: 15px; font-family: \"Noto Sans KR\", sans-serif;'>시간이 좀 더 필요하신가요?</h4>", unsafe_allow_html=True)
